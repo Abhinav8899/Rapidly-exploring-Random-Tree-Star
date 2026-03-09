@@ -14,7 +14,7 @@ class RRTBasicPlanner:
                  goal: np.ndarray,
                  bounds: np.ndarray,
                  obstacles: List[Union[np.ndarray, Tuple, dict]],
-                 max_iterations: int = 10000,
+                 max_iterations: int = 20000,
                  step_size: float = 0.5,
                  search_radius: float = 2.0,
                  goal_sample_rate: float = 0.1):
@@ -163,3 +163,4 @@ class RRTBasicPlanner:
         
 
         return None  # No path found
+
