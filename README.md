@@ -1,12 +1,6 @@
 # Rapidly-exploring Random Tree Star (RRT*) Implementation
 
-A robust Python implementation of the **RRT*** algorithm designed for 3D path planning. This implementation efficiently finds optimal paths in environments with complex obstacles by incrementally building a loss-minimizing tree and "rewiring" nodes to shorten the total path length.
-
-## 🛠 Key Features
-* **3D Path Planning:** Full support for three-dimensional coordinate systems.
-* **Dual Collision Detection:** Handles both **Spherical** and **Box** (AABB) obstacles.
-* **Tree Optimization:** Implements the RRT* "rewire" step to ensure path cost decreases over iterations.
-* **Modular Design:** Easy to integrate into robotics simulations or autonomous navigation stacks.
+A robust Python implementation of the **RRT*** algorithm designed for 3D path planning. This implementation efficiently finds optimal paths in environments with complex obstacles by incrementally building a loss-minimizing tree.
 
 ## 🚀 Getting Started
 
@@ -14,5 +8,20 @@ A robust Python implementation of the **RRT*** algorithm designed for 3D path pl
 * Python 3.x
 * NumPy
 
-```bash
-pip install numpy
+## 🧠 Algorithm Overview
+RRT* (Rapidly-exploring Random Tree Star) is an incremental sampling-based motion planning algorithm. It improves upon the basic RRT by ensuring **asymptotic optimality**.
+
+### Key Steps in this Implementation:
+1. **Sampling**: A random configuration is sampled from the 3D search space.
+2. **Nearest Node**: The algorithm finds the existing node in the tree closest to the sample.
+3. **Steering**: A new node is created by moving from the nearest node toward the sample by a fixed `step_size`.
+4. **Choose Parent**: Instead of just connecting to the nearest node, it searches a `search_radius` to find the neighbor that offers the lowest path cost from the start.
+5. **Rewiring**: This implementation checks if the new node can provide a shorter path to any of its existing neighbors. If so, those neighbors are "rewired" to the new node.
+
+
+
+## 🤝 Contributing
+Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
