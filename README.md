@@ -1,4 +1,4 @@
-# Rapidly-exploring Random Tree Star (RRT*) Implementation
+# Rapidly-exploring Random Tree Star (RRT*) Implementation for UAV
 
 A robust 3D implementation of the RRT (Rapidly-exploring Random Tree Star) algorithm in Python. Designed for UAV path planning, it efficiently finds optimal trajectories in complex 3D environments by incrementally building a loss-minimizing tree.
 ## 🚀 Getting Started
