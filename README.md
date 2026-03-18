@@ -21,41 +21,19 @@ RRT* (Rapidly-exploring Random Tree Star) is an incremental sampling-based motio
 ## 🤝 Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-## 💡 Usage Example
+## 📊 Performance Benchmarking
 
-You can initialize the `RRTBasicPlanner` with custom boundaries and obstacles. The planner supports both 3D boxes and spherical obstacles.
+This repository includes three pre-configured benchmark scenarios to evaluate the algorithm's performance in 3D environments. These scripts measure **execution time**, **node expansion**, and **path optimality**.
 
-```python
-import numpy as np
-from RRTstar import RRTBasicPlanner
+### How to Run
+Execute the benchmarks directly from your terminal:
 
-# 1. Define search space boundaries [[min_x, max_x], [min_y, max_y], [min_z, max_z]]
-bounds = np.array([[0, 10], [0, 10], [0, 10]])
+```bash
+# Scenario 1: Basic environment with low obstacle density
+python benchmarksingle1.py
 
-# 2. Define obstacles 
-# Box: np.array([x_min, y_min, z_min, x_max, y_max, z_max])
-# Sphere: {'position': [x, y, z], 'radius': r}
-obstacles = [
-    np.array([2, 2, 2, 4, 4, 4]),             # Central Box Obstacle
-    ({'position': [6, 6, 6], 'radius': 1.5})  # Floating Sphere Obstacle
-]
+# Scenario 2: Moderate complexity with intersecting obstacles
+python benchmarksingle2.py
 
-# 3. Initialize the Planner
-planner = RRTBasicPlanner(
-    start=np.array([0, 0, 0]),
-    goal=np.array([9, 9, 9]),
-    bounds=bounds,
-    obstacles=obstacles,
-    max_iterations=10000,
-    step_size=0.5,
-    search_radius=2.0
-)
-
-# 4. Generate the optimal path
-path = planner.plan_path()
-
-if path is not None:
-    print(f"✅ Success! Path found with {len(path)} nodes.")
-    print("Path coordinates:\n", path)
-else:
-    print("❌ No path found within the iteration limit.")
+# Scenario 3: High-complexity stress test with dense 3D obstacle fields
+python benchmarksingle3.py
