@@ -17,9 +17,3 @@ A robust Python implementation of the **RRT*** algorithm designed for 3D path pl
 
 ```bash
 pip install numpy
-
-### Installation
-1. Clone the repository:
-   ```bash
-git clone [https://github.com/Abhinav8899/Rapidly-exploring-Random-Tree-Star.git](https://github.com/Abhinav8899/Rapidly-exploring-Random-Tree-Star.git)
-cd Rapidly-exploring-Random-Tree-Star
