@@ -16,7 +16,13 @@ RRT* (Rapidly-exploring Random Tree Star) is an incremental sampling-based motio
 3. **Steering**: A new node is created by moving from the nearest node toward the sample by a fixed `step_size`.
 4. **Choose Parent**: Instead of just connecting to the nearest node, it searches a `search_radius` to find the neighbor that offers the lowest path cost from the start.
 5. **Rewiring**: This implementation checks if the new node can provide a shorter path to any of its existing neighbors. If so, those neighbors are "rewired" to the new node.
-   
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/Abhinav8899/Rapidly-exploring-Random-Tree-Star.git](https://github.com/Abhinav8899/Rapidly-exploring-Random-Tree-Star.git)
+   cd Rapidly-exploring-Random-Tree-Star
+   ```
 
 ## 📊 Performance Benchmarking
 
